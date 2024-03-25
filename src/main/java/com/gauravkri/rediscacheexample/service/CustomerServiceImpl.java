@@ -30,7 +30,8 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     @Caching(
-            evict = {@CacheEvict(value = "CustomerList", allEntries = true)}
+            evict = {@CacheEvict(value = "CustomerList", allEntries = true)},
+            put = {@CachePut(value = "customer", keyGenerator = "customKeyGenerator")}
     )
     public CustomerEntity saveCustomer(CustomerEntity customerEntity){
         CustomerEntity customerEntity1 =customerRepo.save(customerEntity);
