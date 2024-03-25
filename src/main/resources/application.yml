@@ -1,0 +1,11 @@
+spring:
+  cache:
+    type: redis
+    host: localhost
+    port: 6379
+    redis:
+      time-to-live: 60000
+  data:
+    mongodb:
+      uri: mongodb://root:example@localhost:27017/?database=
+      database: unify_saas
